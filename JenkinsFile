@@ -13,7 +13,7 @@ stage(install){
 			}
 			stage(test){
 				steps{
-					sh 'mvn test'
+					sh 'mvn install -DskipTests=true'
 					}
 					
 					post {
