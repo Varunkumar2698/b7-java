@@ -1,12 +1,12 @@
 pipeline{
 		agent any
 		stages{
-		   			stage(clean){
+		   	stage(clean){
 				steps{
 					sh 'mvn clean'
 					}
 			}
-stage(install){
+			stage(install){
 				steps{
 					sh 'mvn  install -DskipTests'
 					}
@@ -17,10 +17,10 @@ stage(install){
 					}
 					
 					post {
-  always {
-    archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
+	 		 always {
+	    		archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
 					
-					
+				
   }
 }
 			}
