@@ -6,10 +6,10 @@ pipeline{
 					sh 'mvn clean'
 					}
 			}
-stage(install){
-				steps{
-					sh 'mvn  install -DskipTests'
-					}
+		stage(install){
+			steps{
+				sh 'mvn  install -DskipTests'
+				}
 			}
 			stage(test){
 				steps{
@@ -17,8 +17,8 @@ stage(install){
 					}
 					
 					post {
-  always {
-    archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
+  			always {
+   				 archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
 					
 					
   }
