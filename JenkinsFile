@@ -14,8 +14,7 @@ pipeline{
 			stage(test){
 				steps{
 					sh 'mvn clean install -DskipTests'
-				}
-					
+				}			
 					post {
   				always {
    				 archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
